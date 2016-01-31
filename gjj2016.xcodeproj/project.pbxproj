@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		E1133DA81C5CAAAE0095E920 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1133DA71C5CAAAE0095E920 /* ResourcePath.mm */; };
 		E1133DAB1C5CAAAE0095E920 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DAA1C5CAAAE0095E920 /* main.cpp */; };
-		E1133DAE1C5CAAAE0095E920 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E1133DAD1C5CAAAE0095E920 /* cute_image.jpg */; };
-		E1133DB01C5CAAAE0095E920 /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = E1133DAF1C5CAAAE0095E920 /* nice_music.ogg */; };
-		E1133DB21C5CAAAE0095E920 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E1133DB11C5CAAAE0095E920 /* sansation.ttf */; };
-		E1133DB41C5CAAAE0095E920 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E1133DB31C5CAAAE0095E920 /* icon.png */; };
+		E1133DBE1C5CAF8E0095E920 /* MainGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DBD1C5CAF8E0095E920 /* MainGame.cpp */; settings = {ASSET_TAGS = (); }; };
+		E1133DC11C5CBCB10095E920 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DBF1C5CBCB10095E920 /* Animation.cpp */; settings = {ASSET_TAGS = (); }; };
+		E1133DC31C5CCE9D0095E920 /* data in Resources */ = {isa = PBXBuildFile; fileRef = E1133DC21C5CCE9D0095E920 /* data */; settings = {ASSET_TAGS = (); }; };
+		E1133DC61C5CD8060095E920 /* ActionCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DC41C5CD8060095E920 /* ActionCollector.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,10 +21,15 @@
 		E1133DA71C5CAAAE0095E920 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		E1133DA91C5CAAAE0095E920 /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		E1133DAA1C5CAAAE0095E920 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		E1133DAD1C5CAAAE0095E920 /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
-		E1133DAF1C5CAAAE0095E920 /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
-		E1133DB11C5CAAAE0095E920 /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
-		E1133DB31C5CAAAE0095E920 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		E1133DBA1C5CABAE0095E920 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		E1133DBB1C5CAC2C0095E920 /* Scene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Scene.h; sourceTree = "<group>"; };
+		E1133DBC1C5CAEE10095E920 /* MainGame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainGame.h; sourceTree = "<group>"; };
+		E1133DBD1C5CAF8E0095E920 /* MainGame.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainGame.cpp; sourceTree = "<group>"; };
+		E1133DBF1C5CBCB10095E920 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
+		E1133DC01C5CBCB10095E920 /* Animation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Animation.hpp; sourceTree = "<group>"; };
+		E1133DC21C5CCE9D0095E920 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
+		E1133DC41C5CD8060095E920 /* ActionCollector.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionCollector.cpp; sourceTree = "<group>"; };
+		E1133DC51C5CD8060095E920 /* ActionCollector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ActionCollector.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +62,14 @@
 		E1133DA41C5CAAAE0095E920 /* gjj2016 */ = {
 			isa = PBXGroup;
 			children = (
+				E1133DBA1C5CABAE0095E920 /* Common.h */,
+				E1133DBB1C5CAC2C0095E920 /* Scene.h */,
+				E1133DBC1C5CAEE10095E920 /* MainGame.h */,
+				E1133DC51C5CD8060095E920 /* ActionCollector.hpp */,
+				E1133DC01C5CBCB10095E920 /* Animation.hpp */,
+				E1133DC41C5CD8060095E920 /* ActionCollector.cpp */,
+				E1133DBF1C5CBCB10095E920 /* Animation.cpp */,
+				E1133DBD1C5CAF8E0095E920 /* MainGame.cpp */,
 				E1133DA71C5CAAAE0095E920 /* ResourcePath.mm */,
 				E1133DA91C5CAAAE0095E920 /* ResourcePath.hpp */,
 				E1133DAA1C5CAAAE0095E920 /* main.cpp */,
@@ -77,10 +90,7 @@
 		E1133DAC1C5CAAAE0095E920 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E1133DAD1C5CAAAE0095E920 /* cute_image.jpg */,
-				E1133DAF1C5CAAAE0095E920 /* nice_music.ogg */,
-				E1133DB11C5CAAAE0095E920 /* sansation.ttf */,
-				E1133DB31C5CAAAE0095E920 /* icon.png */,
+				E1133DC21C5CCE9D0095E920 /* data */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -142,10 +152,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1133DB41C5CAAAE0095E920 /* icon.png in Resources */,
-				E1133DB21C5CAAAE0095E920 /* sansation.ttf in Resources */,
-				E1133DB01C5CAAAE0095E920 /* nice_music.ogg in Resources */,
-				E1133DAE1C5CAAAE0095E920 /* cute_image.jpg in Resources */,
+				E1133DC31C5CCE9D0095E920 /* data in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,8 +179,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1133DBE1C5CAF8E0095E920 /* MainGame.cpp in Sources */,
 				E1133DAB1C5CAAAE0095E920 /* main.cpp in Sources */,
+				E1133DC11C5CBCB10095E920 /* Animation.cpp in Sources */,
 				E1133DA81C5CAAAE0095E920 /* ResourcePath.mm in Sources */,
+				E1133DC61C5CD8060095E920 /* ActionCollector.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

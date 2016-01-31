@@ -14,78 +14,88 @@
 // method resourcePath() from ResourcePath.hpp
 //
 
-#include <SFML/Audio.hpp>
-#include <SFML/Graphics.hpp>
-
+#include "Common.h"
+#include "MainGame.h"
+#include "ActionCollector.hpp"
 // Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
 
+const char* title = "Title";
+
+sf::RenderWindow *window;
+shared_ptr<Scene> current_scene;
+
+string get_name(const char* file) {
+    return resourcePath() + string("/data/") + file;
+}
+
+namespace tex {
+    sf::Texture bg1;
+    sf::Texture boss1[3];
+    sf::Texture items[2];
+    sf::Texture curtain[5];
+}
+
+void init()
+{
+    window = new sf::RenderWindow(sf::VideoMode(W, H), title, sf::Style::Titlebar | sf::Style::Close);
+    
+    using namespace tex;
+    bg1.loadFromFile(get_name("bg1.jpg"));
+    boss1[0].loadFromFile(get_name("boss1-1.png"));
+    boss1[1].loadFromFile(get_name("boss1-2.png"));
+    boss1[2].loadFromFile(get_name("boss1-3.png"));
+    items[0].loadFromFile(get_name("i1.png"));
+    items[1].loadFromFile(get_name("i2.png"));
+    
+    for (int i = 0; i < 5; ++i) {
+        char buf[32];
+        snprintf(buf, sizeof(buf), "curtain/%d.png", i + 1);
+        curtain[i].loadFromFile(get_name(buf));
+    }
+    auto main_game = make_shared<MainGame>();
+    main_game->Init(1);
+    current_scene = main_game;
+    
+}
+
 int main(int, char const**)
 {
-    // Create the main window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
-
-    // Set the Icon
-    sf::Image icon;
-    if (!icon.loadFromFile(resourcePath() + "icon.png")) {
-        return EXIT_FAILURE;
-    }
-    window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
-
-    // Load a sprite to display
-    sf::Texture texture;
-    if (!texture.loadFromFile(resourcePath() + "cute_image.jpg")) {
-        return EXIT_FAILURE;
-    }
-    sf::Sprite sprite(texture);
-
-    // Create a graphical text to display
-    sf::Font font;
-    if (!font.loadFromFile(resourcePath() + "sansation.ttf")) {
-        return EXIT_FAILURE;
-    }
-    sf::Text text("Hello SFML", font, 50);
-    text.setColor(sf::Color::Black);
-
-    // Load a music to play
-    sf::Music music;
-    if (!music.openFromFile(resourcePath() + "nice_music.ogg")) {
-        return EXIT_FAILURE;
-    }
-
-    // Play the music
-    music.play();
-
-    // Start the game loop
-    while (window.isOpen())
-    {
-        // Process events
-        sf::Event event;
-        while (window.pollEvent(event))
+    try {
+        init();
+        
+        ActionCollector::instance().init();
+        
+        sf::Clock clock_;
+        while (window->isOpen())
         {
-            // Close window: exit
-            if (event.type == sf::Event::Closed) {
-                window.close();
+            sf::Event event;
+            while (window->pollEvent(event))
+            {
+                if (event.type == sf::Event::Closed)
+                    window->close();
+                else if (event.type == sf::Event::KeyPressed &&
+                         event.key.code == sf::Keyboard::J) {
+                    fprintf(stderr, "J\n");
+                    ActionCollector::instance().set_action_1();
+                }
             }
-
-            // Escape pressed: exit
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape) {
-                window.close();
-            }
+            
+            if (clock_.getElapsedTime().asMicroseconds() < 16667) continue;
+            
+            clock_.restart();
+            //expect = 33 - expect;
+            current_scene->Update();
+            
+            window->clear();
+            current_scene->Render();
+            window->display();
         }
-
-        // Clear screen
-        window.clear();
-
-        // Draw the sprite
-        window.draw(sprite);
-
-        // Draw the string
-        window.draw(text);
-
-        // Update the window
-        window.display();
     }
-
+    catch (std::exception& e) {
+        printf("err: %s\n", e.what());
+    }
+    
+    return 0;
     return EXIT_SUCCESS;
 }
