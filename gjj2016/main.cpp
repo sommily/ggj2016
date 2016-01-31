@@ -79,6 +79,11 @@ int main(int, char const**)
                     fprintf(stderr, "J\n");
                     ActionCollector::instance().set_action_1();
                 }
+                else if (event.type == sf::Event::KeyPressed &&
+                         event.key.code == sf::Keyboard::K) {
+                    fprintf(stderr, "K\n");
+                    ActionCollector::instance().set_action_2();
+                }
             }
             
             if (clock_.getElapsedTime().asMicroseconds() < 16667) continue;
