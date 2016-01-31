@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		E1133DA81C5CAAAE0095E920 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = E1133DA71C5CAAAE0095E920 /* ResourcePath.mm */; };
 		E1133DAB1C5CAAAE0095E920 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DAA1C5CAAAE0095E920 /* main.cpp */; };
-		E1133DBE1C5CAF8E0095E920 /* MainGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DBD1C5CAF8E0095E920 /* MainGame.cpp */; settings = {ASSET_TAGS = (); }; };
-		E1133DC11C5CBCB10095E920 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DBF1C5CBCB10095E920 /* Animation.cpp */; settings = {ASSET_TAGS = (); }; };
-		E1133DC31C5CCE9D0095E920 /* data in Resources */ = {isa = PBXBuildFile; fileRef = E1133DC21C5CCE9D0095E920 /* data */; settings = {ASSET_TAGS = (); }; };
-		E1133DC61C5CD8060095E920 /* ActionCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DC41C5CD8060095E920 /* ActionCollector.cpp */; settings = {ASSET_TAGS = (); }; };
+		E1133DBE1C5CAF8E0095E920 /* MainGame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DBD1C5CAF8E0095E920 /* MainGame.cpp */; };
+		E1133DC11C5CBCB10095E920 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DBF1C5CBCB10095E920 /* Animation.cpp */; };
+		E1133DC31C5CCE9D0095E920 /* data in Resources */ = {isa = PBXBuildFile; fileRef = E1133DC21C5CCE9D0095E920 /* data */; };
+		E1133DC61C5CD8060095E920 /* ActionCollector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E1133DC41C5CD8060095E920 /* ActionCollector.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -321,6 +321,7 @@
 				E1133DB91C5CAAAE0095E920 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -18,9 +18,13 @@ public:
     bool init();
     void set_action_1();
     bool get_action_1();
+    void set_action_2();
+    bool get_action_2();
 private:
     static void usr1_action(int);
     bool action_1;
+    static void usr2_action(int);
+    bool action_2;
 };
 
 #endif /* ActionCollector_hpp */
